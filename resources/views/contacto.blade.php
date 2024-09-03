@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El mejor contacto del mundo</title>
+</head>
+<body>
+    <h1>Aqui va el mejor contacto del mundo</h1>
+    <form action="guardar-formulario" method="POST">
+        @csrf
+        <div class="input_group">
+            <label for="nombre">Nombre:</label><br>
+            <input name="nombre" type="text" id="nombre" placeholder="Tu nombre...">
+        </div>
+        <div class="input_group">
+            <label for="correo">Correo:</label><br>
+            <input name="correo" type="email" id="correo" placeholder="Tu correo...">
+        </div>
+        <div class="input_group">
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea name="mensaje" cols="30" rows="4" id="mensaje" placeholder="Tu mensaje..."></textarea>
+        </div>
+        <input type="submit" value="Enviar formulario">
+    </form>
+</body>
+</html>

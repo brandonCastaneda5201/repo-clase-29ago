@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/contacto', function () {
+    return view("contacto");
+});
+
+Route::post('/guardar-formulario', function (Request $request) {
+    // recibir datos
+    dd($request->all());
+    // Validar datos
+    // $request->nombre
+    // Guardar datos
+
+    // Redireccionar
 });
