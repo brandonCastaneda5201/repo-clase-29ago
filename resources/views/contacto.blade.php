@@ -21,7 +21,17 @@
             <label for="mensaje">Mensaje:</label><br>
             <textarea name="mensaje" cols="30" rows="4" id="mensaje" placeholder="Tu mensaje..."></textarea>
         </div>
-        <input type="submit" value="Enviar formulario">
+        <input type="submit" value="Enviar formulario"><br>
+        @error('correo')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        @error('nombre')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        @error('mensaje')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <br>
     </form>
 </body>
 </html>

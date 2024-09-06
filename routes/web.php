@@ -3,6 +3,7 @@
 use App\Models\Contacto;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ContactoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,25 +16,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/contacto', function () {
-    return view("contacto");
-});
-
-Route::post('/guardar-formulario', function (Request $request) {
-    // recibir datos
-    //dd($request->all());
-    // Validar datos
-    // $request->nombre
-    // Guardar datos
-    $contacto = new Contacto();
-    $contacto->nombre = $request->nombre;
-    $contacto->correo = $request->correo;
-    $contacto->mensaje = $request->mensaje;
-    $contacto->save();
-    // Redireccionar
-    return redirect("/contacto");
-});
+Route::get('/contacto', [ContactoController::class, 'formularioContacto']);
+Route::post('/guardar-formulario', [ContactoController::class, 'guardarFormulario']);
+Route::get('/mensaje', [ContactoController::class, 'listado']);
