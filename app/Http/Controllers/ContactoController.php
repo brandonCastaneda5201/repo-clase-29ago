@@ -19,10 +19,10 @@ class ContactoController extends Controller
 
     }
 
-    public function formularioContacto()
-    {
-        return view('contacto');
-    }
+    //public function formularioContacto()
+    //{
+    //    return view('contacto');
+    //}
 
     public function guardarFormulario(Request $request)
     {
@@ -46,6 +46,9 @@ class ContactoController extends Controller
         return redirect('/contacto'); //Captura la información de un alumno 
 
         //redireccionar datos
+    }
+    public function formularioContacto(Request $request, $tipo_usuario = null){
+        return view("contacto", compact("tipo_usuario"));
     }
     //
 }

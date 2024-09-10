@@ -16,6 +16,6 @@ use App\Http\Controllers\ContactoController;
 |
 */
 
-Route::get('/contacto', [ContactoController::class, 'formularioContacto']);
 Route::post('/guardar-formulario', [ContactoController::class, 'guardarFormulario']);
-Route::get('/mensaje', [ContactoController::class, 'listado']);
+Route::get('/clientes', [ContactoController::class, 'listado']);
+Route::get('/contacto/{tipo_usuario?}', [ContactoController::class, 'formularioContacto']);
